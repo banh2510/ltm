@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>Lập Trình Hướng Đối Tượng (OOP) trong JavaScript - lptriinhmng</title><meta name="description" content="Trong bài chia sẻ lần này, mình xin giới thiệu với các bạn tổng quát về khái niệm OOP trong Javascipt, cụ thể&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://banh2510.github.io/ltm/lap-trinh-huong-doi-tuong-oop-trong-javascript.html"><link rel="alternate" type="application/atom+xml" href="https://banh2510.github.io/ltm/feed.xml"><link rel="alternate" type="application/json" href="https://banh2510.github.io/ltm/feed.json"><meta property="og:title" content="Lập Trình Hướng Đối Tượng (OOP) trong JavaScript"><meta property="og:image" content="https://banh2510.github.io/ltm/media/posts/7/22.png"><meta property="og:image:width" content="300"><meta property="og:image:height" content="168"><meta property="og:site_name" content="lptriinhmng"><meta property="og:description" content="Trong bài chia sẻ lần này, mình xin giới thiệu với các bạn tổng quát về khái niệm OOP trong Javascipt, cụ thể&hellip;"><meta property="og:url" content="https://banh2510.github.io/ltm/lap-trinh-huong-doi-tuong-oop-trong-javascript.html"><meta property="og:type" content="article"><link rel="stylesheet" href="https://banh2510.github.io/ltm/assets/css/fontawesome-all.min.css?v=85514f933f9e0b82460af63f1a403fa5"><link rel="stylesheet" href="https://banh2510.github.io/ltm/assets/css/style.css?v=a43d11e6c8e1828dd0b983b73b3cdb13"><noscript><link rel="stylesheet" href="https://banh2510.github.io/ltm/assets/css/noscript.css?v=efa867a99f5064d6729e4dc2008ad50b"></noscript><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://banh2510.github.io/ltm/lap-trinh-huong-doi-tuong-oop-trong-javascript.html"},"headline":"Lập Trình Hướng Đối Tượng (OOP) trong JavaScript","datePublished":"2024-12-31T10:45+07:00","dateModified":"2024-12-31T22:52+07:00","image":{"@type":"ImageObject","url":"https://banh2510.github.io/ltm/media/posts/7/22.png","height":168,"width":300},"description":"Trong bài chia sẻ lần này, mình xin giới thiệu với các bạn tổng quát về khái niệm OOP trong Javascipt, cụ thể&hellip;","author":{"@type":"Person","name":"bnh","url":"https://banh2510.github.io/ltm/authors/bnh/"},"publisher":{"@type":"Organization","name":"bnh","logo":{"@type":"ImageObject","url":"https://banh2510.github.io/ltm/media/website/Brown_Vintage_Retro_Cake_and_Bakery_Business_Logo__1_-removebg-preview.png","height":500,"width":500}}}</script><style>#wrapper > .bg {
+               background-image: url(https://banh2510.github.io/ltm/assets/images/overlay.png), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(https://banh2510.github.io/ltm/media/website/18.avif);
+           }</style><noscript><style>img[loading] {
+                    opacity: 1;
+                }</style></noscript></head><body class="is-preload post-template"><div id="wrapper"><header id="header"><a class="logo logo-image" href="https://banh2510.github.io/ltm/"><img src="https://banh2510.github.io/ltm/media/website/Brown_Vintage_Retro_Cake_and_Bakery_Business_Logo__1_-removebg-preview.png" alt="lptriinhmng" width="500" height="500"></a></header><nav id="nav"><ul class="links"><li><a href="https://banh2510.github.io/ltm/" target="_self">HOME</a></li><li><a href="https://banh2510.github.io/ltm/tags/blogs/" target="_self">BLOGS</a></li><li><a href="https://banh2510.github.io/ltm/profile.html" target="_self">PROFILE</a></li></ul></nav><main id="main"><article class="post"><header class="major"><time datetime="2024-12-31T10:45" class="date">December 31, 2024</time><h1>Lập Trình Hướng Đối Tượng (OOP) trong JavaScript</h1><p class="post__inner"></p></header><figure class="image main"><img src="https://banh2510.github.io/ltm/media/posts/7/22.png" srcset="https://banh2510.github.io/ltm/media/posts/7/responsive/22-xs.png 300w, https://banh2510.github.io/ltm/media/posts/7/responsive/22-sm.png 480w, https://banh2510.github.io/ltm/media/posts/7/responsive/22-md.png 768w, https://banh2510.github.io/ltm/media/posts/7/responsive/22-lg.png 1024w, https://banh2510.github.io/ltm/media/posts/7/responsive/22-xl.png 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="168" width="300" alt=""></figure><div class="post__inner post__entry"><header class="mb-05"><h1 class="article-content__title"> </h1></header><div><div class="el-alert mt-1 el-alert--warning is-light" role="alert"><div class="el-alert__content"> </div></div></div><div class="article-content__body my-2 flex-fill"><div class="md-contents"><p>Trong bài chia sẻ lần này, mình xin giới thiệu với các bạn tổng quát về khái niệm OOP trong Javascipt, cụ thể là Object, Prototypes, và Classes.</p><h2 id="_khai-niem-co-ban-0">Khái niệm cơ bản.</h2><p>Object trong Javascript có dạng tự do và hầu hết không theo bất kỳ cấu trúc nào. Cấu trúc của chúng có thể gần giống với đối tượng <em>Map</em> trong Java, gồm các cặp key-value.</p><p>Các đối tượng Javascript không cần phải có các thành phần được khai báo trước. Vì các đối tượng trong Javascript không cần được định nghĩa như các bản thiết kế lớp như trong Java, các classes có thể tự do biến đổi; được gán biến giống như các yêu cầu của chương trình.</p><div style="box-sizing: border-box; position: relative;"><pre class="language-none" data-filename=""><code>let object = { 'oldProp':'Old Value'};
+object.newProp = 'New Value';
+console.log(object); 
+// { oldProp : 'Old Value', newProp : 'Some Value' }
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="let object = { 'oldProp':'Old Value'};
+object.newProp = 'New Value';
+console.log(object); 
+// { oldProp : 'Old Value', newProp : 'Some Value' }
+"></button></div><h2 id="_ham-khoi-tao---new-1">Hàm khởi tạo - "new".</h2><p>Javascript có từ khóa <em>new</em>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new" target="_blank" rel="noopener">cho phép các đối tượng tạo ra bằng cách sử dụng hàm khởi tạo</a>, khác với các hàm bình thường. Chúng hoạt động tương tự như các hàm constructors trong Java.</p><p>Ví dụ: tạo đối tượng trong Javascript theo cách truyền thống là sử dụng các hàm.</p><div style="box-sizing: border-box; position: relative;"><pre class="language-none" data-filename=""><code>function createPerson(name) {
+  let person = {};
+  person.name = name;
+  return person;
+}
+let myPerson = createPerson("Greg");
+console.log(myPerson); // { name : 'Greg' }
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="function createPerson(name) {
+  let person = {};
+  person.name = name;
+  return person;
+}
+let myPerson = createPerson(&quot;Greg&quot;);
+console.log(myPerson); // { name : 'Greg' }
+"></button></div><p><strong>Từ khóa <em>new</em> loại bỏ sự cần thiết phải sử dụng mã để khai báo và trả về một đối tượng được tạo và cung cấp nó một cách ngầm định</strong>.</p><p>Sự khác biệt là sử dụng <em>this</em> để chỉ ra đối tượng được xây dựng ẩn trong quá trình gán thuộc tính. Không giống với Java, <em>new</em> được sử dụng trên các hàm gần như ngược lại với cấu trúc riêng của class.</p><div style="box-sizing: border-box; position: relative;"><pre class="language-none" data-filename=""><code>function createPerson(name) {
+  this.name = name;
+}
+let myPerson = new createPerson("Greg");
+console.log(myPerson); // createPerson { name: 'Greg' }
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="function createPerson(name) {
+  this.name = name;
+}
+let myPerson = new createPerson(&quot;Greg&quot;);
+console.log(myPerson); // createPerson { name: 'Greg' }
+"></button></div><p>Một lưu ý: quy ước mã hóa điển hình cho các hàm đặt tên được thiết kế để được gọi ra với từ khóa <em>new</em> là chúng phải ở trong <em>PascalCase</em> và không phải là <em>camelCase</em>. Điều quan trọng là nhận ra sự khác biệt giữa các hàm cần được thực hiện bình thường và giống như một hàm khởi tạo.</p><p><strong>Việc gọi một hàm được thiết kế tương tự như việc gọi hàm khởi tạo không trả về đối tượng, thay vào đó set các thuộc tính trên đối tượng . Từ khóa <em>this</em> trong hàm khởi tạo tham chiếu đến đối tượng mà nó sẽ trả về. Khi gọi bình thường thì nó sẽ tham chiếu đến đối tượng hàm là thuộc tính của nó</strong>.</p><p>Ví dụ, nếu chúng ta gọi hàm khởi tạo 1 cách bình thường, chúng ta sẽ thấy từ khóa <em>this</em> tham chiếu đến đối tượng cha, nhưng trong ví dụ bên dưới, đối tượng <em>global</em> là đối tượng được gọi. Đối tượng global phụ thuộc vào môi trường thực thi của Javascript; <em>window</em> cho browsers và <em>global</em> cho nodeJS.</p><div class="v-markdown-content-box" style="box-sizing: border-box; max-height: 300px; padding-bottom: 1rem; cursor: pointer; mask-image: linear-gradient(#000000 60%, transparent); position: relative;"><pre class="language-none" data-filename=""><code>function Person(name) {
+  this.name = name;
+}
+// RETURNS OBJECT
+let myPerson = new Person("Greg");
+console.log(myPerson); // Person { name: 'Greg' }
+// NO OBJECT RETURNED - PROPERTY ASSIGNED TO PARENT OBJECT (GLOBAL)
+let myOtherPerson = Person("Gerg");
+console.log(myOtherPerson); // undefined
+console.log(this.name); // Gerg
+
+function Dog(name) {
+  this.name = name;
+  this.giveCollar = function() {
+    this.collar = true;
+  };
+}
+// PROPERTY ASSIGNED TO PARENT OBECT (DOG)
+let myDog = new Dog("Snuffles");
+myDog.giveCollar();
+console.log(myDog.collar); // true
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="function Person(name) {
+  this.name = name;
+}
+// RETURNS OBJECT
+let myPerson = new Person(&quot;Greg&quot;);
+console.log(myPerson); // Person { name: 'Greg' }
+// NO OBJECT RETURNED - PROPERTY ASSIGNED TO PARENT OBJECT (GLOBAL)
+let myOtherPerson = Person(&quot;Gerg&quot;);
+console.log(myOtherPerson); // undefined
+console.log(this.name); // Gerg
+
+function Dog(name) {
+  this.name = name;
+  this.giveCollar = function() {
+    this.collar = true;
+  };
+}
+// PROPERTY ASSIGNED TO PARENT OBECT (DOG)
+let myDog = new Dog(&quot;Snuffles&quot;);
+myDog.giveCollar();
+console.log(myDog.collar); // true
+"></button><div class="v-content-flex-center"> </div></div><h3 id="_su-dung-call-de-khac-phuc-van-de-cua-this-phan-tren-2">Sử dụng "call" để khắc phục vấn đề của "this" phần trên.</h3><p>Khi chúng ta sử dụng <em>this</em> trong function, chúng ta hoặc là tham chiếu đến đối tượng cha/kèm theo trong một lời gọi hàm bình thường, hoặc đối tượng đã tạo được trả về trong một hàm khởi tạo.</p><p>Khi chúng ta có đối tượng có các thuộc tính sử dụng từ khóa <em>this</em> để tham chiếu đến các đối tượng cha, ngay lập tức, chúng ta sẽ gặp phải các vấn đề khi chúng ta cố gắng truy cập các chức năng bên ngoài đối tượng.</p><div class="v-markdown-content-box" style="box-sizing: border-box; max-height: 300px; padding-bottom: 1rem; cursor: pointer; mask-image: linear-gradient(#000000 60%, transparent); position: relative;"><pre class="language-none" data-filename=""><code>function SavingsPig() {
+  this.amount = 100,
+  this.addCoins = function(numCoins) {
+    this.amount += numCoins;
+  }
+}
+let piggyBank = new SavingsPig();
+piggyBank.addCoins(1);
+console.log(piggyBank.amount); // 101
+let greg = {};
+greg.addCoins = piggyBank.addCoins;
+greg.addCoins(1);
+console.log(piggyBank.amount); // 101
+console.log(greg); // { addCoins: [Function], amount: NaN }
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="function SavingsPig() {
+  this.amount = 100,
+  this.addCoins = function(numCoins) {
+    this.amount += numCoins;
+  }
+}
+let piggyBank = new SavingsPig();
+piggyBank.addCoins(1);
+console.log(piggyBank.amount); // 101
+let greg = {};
+greg.addCoins = piggyBank.addCoins;
+greg.addCoins(1);
+console.log(piggyBank.amount); // 101
+console.log(greg); // { addCoins: [Function], amount: NaN }
+"></button><div class="v-content-flex-center"> </div></div><p>Trong ví dụ trên, chúng ta có đối tượng <em>piggyBank</em>, có function <em>addCoins</em>, và thuộc tính <em>amount</em>. Khi chúng ta gọi hàm trên đối tượng, số tiền đã được cộng thành công. Tuy nhiên, khi đối tượng <em>greg</em> cố thêm tiền bằng cách gán hàm <em>piggyBank.addCoins(...)</em> cho chính nó, từ khóa <em>this</em> tham chiếu đến đối tượng cha (<em>greg</em>) thay vì <em>piggyBank</em> (kết quả là <em>NaN</em> hoặc not a number bởi vì chúng ta đã cố gắng tăng một thứ chưa được xác định).</p><p>Bằng cách sử dụng <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call" target="_blank" rel="noopener"><em>call</em></a>, chúng ta có thể liên kết một đối tượng với một hàm, thay thế đối tượng cha, để từ khóa this truy cập đến đối tượng ràng buộc của chúng ta.</p><p>call là một hàm ẩn, là thuộc tính của đối tượng hàm; (nhớ là tất cả các hàm trong Javascript đều là đối tượng). Nó chấp nhận giống như params object và một danh sách đối số truyền vào.</p><div class="v-markdown-content-box" style="box-sizing: border-box; max-height: 300px; padding-bottom: 1rem; cursor: pointer; mask-image: linear-gradient(#000000 60%, transparent); position: relative;"><pre class="language-none" data-filename=""><code>function SavingsPig() {
+  this.amount = 100,
+  this.addCoins = function(numCoins) {
+    this.amount += numCoins;
+  }
+}
+let piggyBank = new SavingsPig();
+piggyBank.addCoins(1);
+console.log(piggyBank.amount); // 101
+let greg = {};
+greg.addCoins = piggyBank.addCoins;
+greg.addCoins.call(piggyBank, 1);
+console.log(piggyBank.amount); // 102
+console.log(greg); // { addCoins: [Function] }
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="function SavingsPig() {
+  this.amount = 100,
+  this.addCoins = function(numCoins) {
+    this.amount += numCoins;
+  }
+}
+let piggyBank = new SavingsPig();
+piggyBank.addCoins(1);
+console.log(piggyBank.amount); // 101
+let greg = {};
+greg.addCoins = piggyBank.addCoins;
+greg.addCoins.call(piggyBank, 1);
+console.log(piggyBank.amount); // 102
+console.log(greg); // { addCoins: [Function] }
+"></button><div class="v-content-flex-center"> </div></div><h2 id="_prototypes-3">Prototypes</h2><p>Không thể so sánh cấu trúc lớp của Javascript với các ngôn ngữ OOP truyền thống như Java. Các hành vi (methods/functions/..) trong Javascript không thuộc về một lớp giống như chúng trong Java. Các đối tượng Javascript là một tập hợp các thuộc tính, trong đó function được gán cho một thuộc tính.</p><p>Tuy nhiên Javascript không có tính kế thừa ( tức là việc chuyển các thuộc tính và hàm từ một tối tượng sang cha đối tượng được con). Bất cứ khi nào một đối tượng được tạo ra trong Javascript, thì sẽ 2 đối tượng sẽ được tạo ngầm là object itself(chính nó) và object's prototype(nguyên mẫu của đối tượng).</p><div style="box-sizing: border-box; position: relative;"><pre class="language-none" data-filename=""><code>let someObject = {}
+console.log(someObject.__proto__) // { ...lots of properties }
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="let someObject = {}
+console.log(someObject.__proto__) // { ...lots of properties }
+"></button></div><p>Tất cả các đối tượng được tạo có tham chiếu đến đối tượng nguyên mẫu (<strong>proto</strong>), sẽ có một số thuộc tính và hàm của nguyên mẫu này. Các đối tượng là function(các hàm cũng là các đối tượng) cũng có quyền truy cập đến <em>prototype</em> từ <em>prototype</em> object.</p><p><strong>Prototype bản chất là một tham chiếu đến một đối tượng khác mà nó kế thừa từ đó</strong>. Đối tượng <em>Date</em> kế thừa các hàm từ <em>Date.prototype</em> sau đó nó lại kế thừa từ <em>Object.prototype</em>. Các hàm nguyên mẫu xây dựng có một tham chiếu hai chiều đến chính nó.</p><figure class="article-img"><img loading="lazy" src="https://images.viblo.asia/0de9193c-b780-4d12-a41f-0feee548c4ff.png" alt="" data-is-external-image="true"></figure><div style="box-sizing: border-box; position: relative;"><pre class="language-none" data-filename=""><code>function Bread() {};
+let sodaBread = new Bread();
+sodaBread.__proto__.constructor; // { ƒ Bread() {} }
+Object.getPrototypeOf(sodaBread).constructor; // { ƒ Bread() {} }
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="function Bread() {};
+let sodaBread = new Bread();
+sodaBread.__proto__.constructor; // { ƒ Bread() {} }
+Object.getPrototypeOf(sodaBread).constructor; // { ƒ Bread() {} }
+"></button></div><h3 id="_prototypes-and-prototype-chains-la-su-trien-khai-tinh-ke-thua-doi-tuong-cua-javascript-4">Prototypes (and Prototype chains) là sự triển khai tính kế thừa đối tượng của Javascript.</h3><p>Khi trình thông dịch JS kiểm tra thuộc tính đối tượng định nghĩa cho nó, trước tiên nó kiểm kiểm tra object trước. Nếu object không có thuộc tính được định nghĩa, nó sẽ kiểm tra <em>prototype</em> của đối tượng với cùng thuộc tính, nếu nó được tìm thấy, nó sẽ trả về thuộc tính đó.</p><p>Nó khác với OOP trong Java là prototype object có thể truy cập vào đối tượng tạo ra trước vào sau bất kể khi nào có sự thay đổi nào trên prototype.</p><div style="box-sizing: border-box; position: relative;"><pre class="language-none" data-filename=""><code>function Bread() {}; // constructor function
+let brownBread = new Bread(); // object of type "Bread"
+let sodaBread = new Bread(); // object of type "Bread"
+Bread.prototype.toast = function() {
+        console.log('I am toasting!');
+    }; // set the function on a toast property on the prototype
+// inherited prototype is accessible!
+brownBread.toast(); // I am toasting!
+sodaBread.toast(); // I am toasting!
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="function Bread() {}; // constructor function
+let brownBread = new Bread(); // object of type &quot;Bread&quot;
+let sodaBread = new Bread(); // object of type &quot;Bread&quot;
+Bread.prototype.toast = function() {
+        console.log('I am toasting!');
+    }; // set the function on a toast property on the prototype
+// inherited prototype is accessible!
+brownBread.toast(); // I am toasting!
+sodaBread.toast(); // I am toasting!
+"></button></div><p>Điều thực sự quan trọng cần lưu ý là tranh luận về việc <strong>proto</strong> sử dụng trực tiếp thường không được khuyến khích. Bạn có thể sử dụng <em>Object.getPrototypeOf(obj)</em> để thay thế. Thay đổi prototype của object được coi là một hành vi slow được cho là nên tránh.</p><h2 id="_class-5">Class</h2><p>Trong ES6(2015), cú pháp <em>class</em> đã được đưa vào Javascript. Điều này không thay đổi mô hình kế thừa của JS, mà là cung cấp một phương tiện khác để tạo khái niệm về các đối tượng "class". MDN định nghĩa cú pháp trên <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="noopener">sự kế thừa dựa vào các prototype hiện tại của Javascript</a>.</p><p>Để thấy được điều này, hãy cùng định nghĩa về đối tượng <em>Dog</em> bằng các nguyên mẫu hiện của cửa Javascript.</p><div style="box-sizing: border-box; position: relative;"><pre class="language-none" data-filename=""><code>function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.bark = function() {
+  console.log(this.name + " is barking");
+}
+let myDog = new Dog("Snuffles");
+myDog.bark();  // Snuffles is barking
+let neighboursDog = new Dog("Santos L Halper");
+neighboursDog.bark(); // Santos L Halper is barking
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.bark = function() {
+  console.log(this.name + &quot; is barking&quot;);
+}
+let myDog = new Dog(&quot;Snuffles&quot;);
+myDog.bark();  // Snuffles is barking
+let neighboursDog = new Dog(&quot;Santos L Halper&quot;);
+neighboursDog.bark(); // Santos L Halper is barking
+"></button></div><p>Sử dụng cú pháp <em>class</em>, chúng ta có thể mở rộng nội dung code phía trên:</p><div style="box-sizing: border-box; position: relative;"><pre class="language-none" data-filename=""><code>class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+  bark() {
+    console.log(this.name + " is barking");
+  }
+}
+let myNewDog = new Dog("Laddie");
+myNewDog.bark(); // Laddie is barking
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+  bark() {
+    console.log(this.name + &quot; is barking&quot;);
+  }
+}
+let myNewDog = new Dog(&quot;Laddie&quot;);
+myNewDog.bark(); // Laddie is barking
+"></button></div><p>Có một thay đổi quan trọng trong khi sử dụng cú pháp mới, điều sẽ được làm sáng tỏ ở bên dưới. Để tìm hiểu thêm thông tin về những điều mà bạn có thể làm từ nó, hãy tham khảo tại <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="noopener">Classes on MDN</a>.</p><h3 id="_su-can-thiet-cua-new-6">Sự cần thiết của "new"</h3><p>Đối tượng class yêu cầu được định nghĩa bằng từ khóa <em>new</em>. Theo mặc định, classes sẽ được khởi tạo là một đối tượng rỗng nếu nó không được định nghĩa. Nếu bạn cố gắng thiết lập đối tượng mà không sử dụng hàm khởi tạo, bạn sẽ nhận được thông báo lỗi.</p><div style="box-sizing: border-box; position: relative;"><pre class="language-none" data-filename=""><code>let Dog = class {
+  bark() {
+    console.log("Woof");
+  }
+}
+let myDog = Dog(); 
+// TypeError: Class constructor Dog cannot be invoked without ‘new'
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="let Dog = class {
+  bark() {
+    console.log(&quot;Woof&quot;);
+  }
+}
+let myDog = Dog(); 
+// TypeError: Class constructor Dog cannot be invoked without ‘new'
+"></button></div><h3 id="_namedunnamed-expression-7">Named/Unnamed expression</h3><p>Class có thể đặt tên hoặc không đặt tên, tương tự cú pháp hàm, ví dụ như:</p><div style="box-sizing: border-box; position: relative;"><pre class="language-none" data-filename=""><code>let Dog = class {
+  bark() {
+    console.log("Woof");
+  }
+}
+let myDog = new Dog();
+myDog.bark(); // Woof
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="let Dog = class {
+  bark() {
+    console.log(&quot;Woof&quot;);
+  }
+}
+let myDog = new Dog();
+myDog.bark(); // Woof
+"></button></div><h3 id="_strict-mode-8">Strict mode</h3><p>Các bạn có thể tìm hiểu thêm thông tin về <em>strict mode</em> trên <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="noopener">MDN</a>, nhưng về cơ bản nó là một biến thể hạn chế của Javascript vì nó làm thay đổi ngữ nghĩa bình thường của Javascript.</p><h3 id="_getters-va-setters-9">Getters và Setters</h3><p>Classes có thể sử dụng 2 từ khóa <em>get</em> và <em>set</em> để sử dụng cho các hàm accessor. Điều này có nghĩa là bạn có thể sử dụng tên thuộc tính khi truy cập vào đối tượng thay vì thực thi hàm.</p><div class="v-markdown-content-box" style="box-sizing: border-box; max-height: 300px; padding-bottom: 1rem; cursor: pointer; mask-image: linear-gradient(#000000 60%, transparent); position: relative;"><pre class="language-none" data-filename=""><code>class DogWithGetSet {
+  get name() {
+    return "Snuffles";
+  }
+}
+class DogWithoutGet {
+  name() {
+    return "Snuffles";
+  }
+}
+let dogGetter = new DogWithGetSet();
+let dogNoGetter = new DogWithoutGet();
+console.log(dogGetter.name); // Snuffles
+console.log(dogNoGetter.name); // [Function: name]
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="class DogWithGetSet {
+  get name() {
+    return &quot;Snuffles&quot;;
+  }
+}
+class DogWithoutGet {
+  name() {
+    return &quot;Snuffles&quot;;
+  }
+}
+let dogGetter = new DogWithGetSet();
+let dogNoGetter = new DogWithoutGet();
+console.log(dogGetter.name); // Snuffles
+console.log(dogNoGetter.name); // [Function: name]
+"></button><div class="v-content-flex-center"> </div></div><h3 id="_functions-only-10">Functions-only</h3><p>Classes có thể không chứa các thuộc tính cụ thể. Tất cả các thuộc tính phải được xác định bằng các hàm. Các thể hiện của thuộc tính có thể được trả về thông qua hàm.</p><div style="box-sizing: border-box; position: relative;"><pre class="language-none" data-filename=""><code>class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+  get colour() {
+    return "white";
+  }
+}
+let myDog = new Dog("Snuffles");
+console.log(myDog.colour); // white
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+  get colour() {
+    return &quot;white&quot;;
+  }
+}
+let myDog = new Dog(&quot;Snuffles&quot;);
+console.log(myDog.colour); // white
+"></button></div><h2 id="_tong-ket-11">Tổng kết</h2><p>Bài viết đã phác thảo một cách cơ bản nhất các khái niệm về khởi tạo đối tượng, kế thừa (thông qua Prototyping) và cú pháp mới cho việc tạo class. Nếu có thời gian, mọi người có thể tìm hiểu về các tính năng khác của class như subclassing với các extension của nó.</p><p>Nguồn tài liệu: <a href="https://medium.com/@byrne.greg/oop-digest-in-javascript-807b534a5270" target="_blank" rel="noopener">https://medium.com/@byrne.greg/oop-digest-in-javascript-807b534a5270</a></p></div></div></div><footer class="post__inner post__footer"><p class="post__last-updated">This article was updated on December 31, 2024</p><div class="post__share-tag-container"><div class="post__tag"><h3>Tagged in:</h3><ul><li><a href="https://banh2510.github.io/ltm/tags/blogs/">Blogs</a></li></ul></div><div class="post__share"><button class="post__share-button js-post__share-button icon" aria-label="Share button"><i class="fas fa-share-alt"></i></button><div class="post__share-popup js-post__share-popup"></div></div></div><div class="post__bio"><div><h3><a href="https://banh2510.github.io/ltm/authors/bnh/" class="invert" rel="author">bnh</a></h3></div></div></footer></article><div><strong>You should also read:</strong></div><div class="posts"><article><header><time datetime="2024-12-31T10:46" class="date">December 31, 2024</time><h2><a href="https://banh2510.github.io/ltm/cong-cu-debugging-va-testing-trong-javascript.html">DEBUG JAVASCRIPT – DỄ HAY KHÓ?</a></h2></header><a href="https://banh2510.github.io/ltm/cong-cu-debugging-va-testing-trong-javascript.html" class="image fit"><img src="https://banh2510.github.io/ltm/media/posts/10/20.png" srcset="https://banh2510.github.io/ltm/media/posts/10/responsive/20-xs.png 300w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-sm.png 480w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-md.png 768w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-lg.png 1024w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-xl.png 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="170" width="297" alt=""></a><p>Với mọi ngôn ngữ lập trình, debug là một hoạt động khó và mất nhiều thời gian nhất. Trong đó, debug JavaScript là khó khăn&hellip;</p><ul class="actions special"><li><a href="https://banh2510.github.io/ltm/cong-cu-debugging-va-testing-trong-javascript.html" class="button">Full Story</a></li></ul></article><article><header><time datetime="2024-12-31T10:46" class="date">December 31, 2024</time><h2><a href="https://banh2510.github.io/ltm/tim-hieu-ve-web-apis-trong-javascript.html">Tìm Hiểu về Web APIs trong JavaScript</a></h2></header><a href="https://banh2510.github.io/ltm/tim-hieu-ve-web-apis-trong-javascript.html" class="image fit"><img src="https://banh2510.github.io/ltm/media/posts/9/13.jpg" srcset="https://banh2510.github.io/ltm/media/posts/9/responsive/13-xs.jpg 300w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-sm.jpg 480w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-md.jpg 768w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-lg.jpg 1024w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-xl.jpg 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="526" width="1200" alt=""></a><p>Giới thiệu API Web Worker trong JavaScript Khi lập trình, dev không thể bắt người dùng phải chờ từng tác vụ này thực&hellip;</p><ul class="actions special"><li><a href="https://banh2510.github.io/ltm/tim-hieu-ve-web-apis-trong-javascript.html" class="button">Full Story</a></li></ul></article><article><header><time datetime="2024-12-31T10:45" class="date">December 31, 2024</time><h2><a href="https://banh2510.github.io/ltm/phat-trien-ung-dung-web-voi-javascript-frameworks.html">Top 10 JavaScript Framework phổ biến nhất cho phát triển web</a></h2></header><a href="https://banh2510.github.io/ltm/phat-trien-ung-dung-web-voi-javascript-frameworks.html" class="image fit"><img src="https://banh2510.github.io/ltm/media/posts/8/21.jpg" srcset="https://banh2510.github.io/ltm/media/posts/8/responsive/21-xs.jpg 300w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-sm.jpg 480w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-md.jpg 768w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-lg.jpg 1024w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-xl.jpg 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="162" width="311" alt=""></a><p>JavaScript là ngôn ngữ đa mô hình hỗ trợ các kiểu lập trình theo sự kiện, chức năng và bắt buộc (bao gồm hướng đối tượng và&hellip;</p><ul class="actions special"><li><a href="https://banh2510.github.io/ltm/phat-trien-ung-dung-web-voi-javascript-frameworks.html" class="button">Full Story</a></li></ul></article></div></main><footer id="copyright"><ul><li>© Massively</li><li>Design: <a href="https://html5up.net" target="_blank" rel="nofollow noopener">HTML5 UP</a></li><li>Powered by Publii</li></ul></footer></div><script src="https://banh2510.github.io/ltm/assets/js/jquery.min.js?v=c9771cc3e90e18f5336eedbd0fffb2cf"></script><script src="https://banh2510.github.io/ltm/assets/js/jquery.scrollex.min.js?v=f89065e3d988006af9791b44561d7c90"></script><script src="https://banh2510.github.io/ltm/assets/js/jquery.scrolly.min.js?v=1ed5a78bde1476875a40f6b9ff44fc14"></script><script src="https://banh2510.github.io/ltm/assets/js/browser.min.js?v=c07298dd19048a8a69ad97e754dfe8d0"></script><script src="https://banh2510.github.io/ltm/assets/js/breakpoints.min.js?v=81a479eb099e3b187613943b085923b8"></script><script src="https://banh2510.github.io/ltm/assets/js/util.min.js?v=4201a626f8c9b614a663b3a1d7d82615"></script><script src="https://banh2510.github.io/ltm/assets/js/main.min.js?v=56233c354bd814758be8bff42f7e13a5"></script><script>/*<![CDATA[*/var images=document.querySelectorAll("img[loading]");for(var i=0;i<images.length;i++){if(images[i].complete){images[i].classList.add("is-loaded")}else{images[i].addEventListener("load",function(){this.classList.add("is-loaded")},false)}};/*]]>*/</script></body></html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>DEBUG JAVASCRIPT – DỄ HAY KHÓ? - lptriinhmng</title><meta name="description" content="Với mọi ngôn ngữ lập trình, debug là một hoạt động khó và mất nhiều thời gian nhất. Trong đó, debug JavaScript là khó khăn&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://banh2510.github.io/ltm/cong-cu-debugging-va-testing-trong-javascript.html"><link rel="alternate" type="application/atom+xml" href="https://banh2510.github.io/ltm/feed.xml"><link rel="alternate" type="application/json" href="https://banh2510.github.io/ltm/feed.json"><meta property="og:title" content="DEBUG JAVASCRIPT – DỄ HAY KHÓ?"><meta property="og:image" content="https://banh2510.github.io/ltm/media/posts/10/20.png"><meta property="og:image:width" content="297"><meta property="og:image:height" content="170"><meta property="og:site_name" content="lptriinhmng"><meta property="og:description" content="Với mọi ngôn ngữ lập trình, debug là một hoạt động khó và mất nhiều thời gian nhất. Trong đó, debug JavaScript là khó khăn&hellip;"><meta property="og:url" content="https://banh2510.github.io/ltm/cong-cu-debugging-va-testing-trong-javascript.html"><meta property="og:type" content="article"><link rel="stylesheet" href="https://banh2510.github.io/ltm/assets/css/fontawesome-all.min.css?v=85514f933f9e0b82460af63f1a403fa5"><link rel="stylesheet" href="https://banh2510.github.io/ltm/assets/css/style.css?v=a43d11e6c8e1828dd0b983b73b3cdb13"><noscript><link rel="stylesheet" href="https://banh2510.github.io/ltm/assets/css/noscript.css?v=efa867a99f5064d6729e4dc2008ad50b"></noscript><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://banh2510.github.io/ltm/cong-cu-debugging-va-testing-trong-javascript.html"},"headline":"DEBUG JAVASCRIPT – DỄ HAY KHÓ?","datePublished":"2024-12-31T10:46+07:00","dateModified":"2024-12-31T22:51+07:00","image":{"@type":"ImageObject","url":"https://banh2510.github.io/ltm/media/posts/10/20.png","height":170,"width":297},"description":"Với mọi ngôn ngữ lập trình, debug là một hoạt động khó và mất nhiều thời gian nhất. Trong đó, debug JavaScript là khó khăn&hellip;","author":{"@type":"Person","name":"bnh","url":"https://banh2510.github.io/ltm/authors/bnh/"},"publisher":{"@type":"Organization","name":"bnh","logo":{"@type":"ImageObject","url":"https://banh2510.github.io/ltm/media/website/Brown_Vintage_Retro_Cake_and_Bakery_Business_Logo__1_-removebg-preview.png","height":500,"width":500}}}</script><style>#wrapper > .bg {
+               background-image: url(https://banh2510.github.io/ltm/assets/images/overlay.png), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(https://banh2510.github.io/ltm/media/website/18.avif);
+           }</style><noscript><style>img[loading] {
+                    opacity: 1;
+                }</style></noscript></head><body class="is-preload post-template"><div id="wrapper"><header id="header"><a class="logo logo-image" href="https://banh2510.github.io/ltm/"><img src="https://banh2510.github.io/ltm/media/website/Brown_Vintage_Retro_Cake_and_Bakery_Business_Logo__1_-removebg-preview.png" alt="lptriinhmng" width="500" height="500"></a></header><nav id="nav"><ul class="links"><li><a href="https://banh2510.github.io/ltm/" target="_self">HOME</a></li><li><a href="https://banh2510.github.io/ltm/tags/blogs/" target="_self">BLOGS</a></li><li><a href="https://banh2510.github.io/ltm/profile.html" target="_self">PROFILE</a></li></ul></nav><main id="main"><article class="post"><header class="major"><time datetime="2024-12-31T10:46" class="date">December 31, 2024</time><h1>DEBUG JAVASCRIPT – DỄ HAY KHÓ?</h1><p class="post__inner"></p></header><figure class="image main"><img src="https://banh2510.github.io/ltm/media/posts/10/20.png" srcset="https://banh2510.github.io/ltm/media/posts/10/responsive/20-xs.png 300w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-sm.png 480w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-md.png 768w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-lg.png 1024w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-xl.png 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="170" width="297" alt=""></figure><div class="post__inner post__entry"><p>Với mọi ngôn ngữ lập trình, debug là một hoạt động khó và mất nhiều thời gian nhất. Trong đó, debug <a href="https://completejavascript.com/gioi-thieu-tong-quan-ve-ngon-ngu-lap-trinh-javascript/" target="_blank" rel="noopener">JavaScript</a> là khó khăn hơn cả. Tại sao vậy? Chúng ta sẽ cùng nhau tìm hiểu sau đây.</p><h2 id="_khai-niem-chung-ve-bug-va-debug-0">Khái niệm chung về bug và debug</h2><p>Bug là lỗi của chương trình. Nhìn chung, chúng ta có 2 loại bug: lỗi <strong>ngữ pháp</strong> và lỗi <strong>ngữ nghĩa</strong>.</p><ul><li>Lỗi ngữ pháp: nghĩa là bạn viết sai cú pháp, sai kiểu dữ liệu hay thậm chí là sai chính tả... Đối với những ngôn ngữ lập trình như C/C++ hay Java, bạn sẽ dễ dàng phát hiện và sửa lỗi này vì IDE và trình biên dịch sẽ chỉ ra vị trí lỗi để bạn sửa. Còn đối với JavaScript, bạn sẽ chỉ được thông báo lỗi khi chương trình chạy đến phần đó - vì JavaScript là ngôn ngữ kịch bản, không biên dịch.</li><li>Lỗi ngữ nghĩa: có thể hiểu là bạn sai về logic, thuật toán hay bị lỗi khi tương tác với hệ thống dẫn đến kết quả bị sai khác so với mong đợi. Lỗi này thì luôn luôn khó phát hiện và bạn sẽ phải kiểm tra lại thật kĩ từng phần trong code để tìm ra vị trí mắc lỗi.</li></ul><p>Nếu như bug là lỗi thì debug hay debugging chính là quá trình tìm ra bug.</p><blockquote><p>Debugging khó gấp 2 lần việc bạn viết ra code. Nếu viết code thông minh quá mức, bạn sẽ không đủ thông minh để debug nó - <em>Brian Kernighan và P.J. Plauger, The Elements of Programming Style.</em></p></blockquote><h2 id="_strict-mode-trong-javascript-1">Strict mode trong JavaScript</h2><p>Trong con mắt của nhiều lập trình viên, JavaScript là một thứ vô cùng lộn xộn. Lập trình <a href="https://completejavascript.com/category/javascript-co-ban/" target="_blank" rel="noopener">JavaScript</a> chẳng khác nào cực hình. Tuy nhiên, JavaScript có cung cấp cho lập trình viên chế độ "use strict". Bằng việc khai báo và sử dụng chế độ này, JavaScript sẽ trở nên chính xác và nghiêm ngặt hơn. Do đó, bạn sẽ không thể viết code bừa bãi trong chế độ này. Ví dụ 1: Không sử dụng strict mode</p><div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;"><pre class="language-js" data-filename=""><code>var Infinity = 10;
+delete Object.prototype;
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="var Infinity = 10;
+delete Object.prototype;
+"></button></div><p>Ví dụ 2: Sử dụng strict mode</p><div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;"><pre class="language-js" data-filename=""><code>'use strict'
+x = 10;
+// Uncaught ReferenceError: x is not defined
+var Infinity = 10;
+// Uncaught TypeError: Cannot assign to read only property 'Infinity' of object '#&lt;Window&gt;'
+delete Object.prototype;
+// Uncaught TypeError: Cannot delete property 'prototype' of function Object() { [native code] }
+</code></pre><button class="v-markdown-it-code-copy" style="box-sizing: border-box; border-radius: 5px; margin: 0px; font-family: inherit; font-size: inherit; line-height: inherit; overflow: visible; text-transform: none; appearance: button; position: absolute; display: flex; align-items: center; justify-content: center; top: 7.5px; right: 6px; cursor: pointer; outline: none; border: none; background: #655454; height: 25px; opacity: 0.5;" title="Sao chép" data-clipboard-text="'use strict'
+x = 10;
+// Uncaught ReferenceError: x is not defined
+var Infinity = 10;
+// Uncaught TypeError: Cannot assign to read only property 'Infinity' of object '#&lt;Window&gt;'
+delete Object.prototype;
+// Uncaught TypeError: Cannot delete property 'prototype' of function Object() { [native code] }
+"></button></div><p>Qua hai ví dụ trên, ta thấy rằng: khi sử dụng 'use strict', bạn sẽ không thể sử dụng <a href="https://completejavascript.com/values-types-va-operators-trong-javascript-phan-2/" target="_blank" rel="noopener">biến</a> mà không cần khai báo, không thể gán giá trị cho thuộc tính read-only, không thể delete thuộc tính <a href="https://completejavascript.com/cac-khia-canh-lap-trinh-huong-doi-tuong-trong-javascript/" target="_blank" rel="noopener">prototype</a> của đối tượng <a href="https://completejavascript.com/javascript-object-last-but-not-least/" target="_blank" rel="noopener">object</a>. Và còn nhiều cái *<em>KHÔNG</em> nữa. Vì vậy, tôi quyết định sẽ viết một bài chi tiết hơn về strict mode sau. Như vậy, việc sử dụng strict mode trong lập trình JavaScript sẽ làm giảm thiểu đáng kể những lỗi không mong muốn.</p><h2 id="_testing-truoc-khi-debug-javascript-2">Testing trước khi debug JavaScript</h2><p>Khi mà việc sử dụng strict mode hay trình duyệt không thể giúp bạn tìm ra lỗi thì đây là lúc mà bạn cần phải testing - kiểm thử chương trình. Và để tránh phát sinh lỗi khi chương trình mở rộng ra, bạn nên kiểm tra kĩ mỗi khi viết thêm một module, hay một <a href="https://completejavascript.com/tim-hieu-function-javascript/" target="_blank" rel="noopener">function</a>. Giả sử tôi có <a href="https://completejavascript.com/cau-truc-chuong-trinh-trong-javascript" target="_blank" rel="noopener">đoạn chương trình</a> sau:</p><div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;"><pre class="language-js" data-filename=""><code>function Vector(x, y) {
+  this.x = x;
+  this.y = y;
+}
+Vector.prototype.plus = function(other) {
+  return new Vector(this.x + other.x, this.y + other.y);
+};
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="function Vector(x, y) {
+  this.x = x;
+  this.y = y;
+}
+Vector.prototype.plus = function(other) {
+  return new Vector(this.x + other.x, this.y + other.y);
+};
+"></button></div><p>Bây giờ tôi sẽ viết một đoạn chương trình khác để kiểm tra xem đối tượng Vector có hoạt động đúng như mong đợi hay không:</p><div class="v-markdown-content-box" style="box-sizing: border-box; max-height: 300px; padding-bottom: 1rem; cursor: pointer; mask-image: linear-gradient(#000000 60%, transparent); color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;"><pre class="language-js" data-filename=""><code>function testVector() {
+  var p1 = new Vector(10, 20);
+  var p2 = new Vector(-10, 5);
+  var p3 = p1.plus(p2);
+
+  if (p1.x !== 10) return "fail: x property";
+  if (p1.y !== 20) return "fail: y property";
+  if (p2.x !== -10) return "fail: negative x property";
+  if (p3.x !== 0) return "fail: x from plus";
+  if (p3.y !== 25) return "fail: y from plus";
+  return "everything ok";
+}
+console.log(testVector());
+// =&gt; everything ok
+</code></pre><button class="v-markdown-it-code-copy" style="box-sizing: border-box; border-radius: 5px; margin: 0px; font-family: inherit; font-size: inherit; line-height: inherit; overflow: visible; text-transform: none; appearance: button; position: absolute; display: flex; align-items: center; justify-content: center; top: 7.5px; right: 6px; cursor: pointer; outline: none; border: none; background: #655454; height: 25px; opacity: 0.5;" title="Sao chép" data-clipboard-text="function testVector() {
+  var p1 = new Vector(10, 20);
+  var p2 = new Vector(-10, 5);
+  var p3 = p1.plus(p2);
+
+  if (p1.x !== 10) return &quot;fail: x property&quot;;
+  if (p1.y !== 20) return &quot;fail: y property&quot;;
+  if (p2.x !== -10) return &quot;fail: negative x property&quot;;
+  if (p3.x !== 0) return &quot;fail: x from plus&quot;;
+  if (p3.y !== 25) return &quot;fail: y from plus&quot;;
+  return &quot;everything ok&quot;;
+}
+console.log(testVector());
+// =&gt; everything ok
+"></button><div class="v-content-flex-center"> </div></div><p>Việc viết test như trên gọi là viết <strong>unit test</strong>. Tuy nhiên, thực tế chúng ta sẽ có những <a href="https://completejavascript.com/top-5-framework-javascript-moi-nhat-cho-phat-trien-web-va-app/" target="_blank" rel="noopener">framework</a> hỗ trợ viết unit test chuyên nghiệp hơn, nhanh gọn hơn.</p><h2 id="_debugging---debug-javascript-3">Debugging - Debug JavaScript</h2><p>Một khi đã xác định được chương trình có bug, công việc tiếp theo là tìm ra vị trí gây ra bug và sửa nó. Ví dụ chương trình sau sẽ chuyển một số <em>n</em>, cơ số <em>base</em> thành <a href="https://completejavascript.com/values-types-va-operators-trong-javascript-phan-2/" target="_blank" rel="noopener">string</a>:</p><div class="v-markdown-content-box" style="box-sizing: border-box; max-height: 300px; padding-bottom: 1rem; cursor: pointer; mask-image: linear-gradient(#000000 60%, transparent); color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;"><pre class="language-js" data-filename=""><code>function numberToString(n, base) {
+  var result = "", sign = "";
+  if (n &lt; 0) {
+    sign = "-";
+    n = -n;
+  }
+  do {
+    result = String(n % base) + result;
+    n /= base;
+  } while (n &gt; 0);
+  return sign + result;
+}
+console.log(numberToString(13, 10));
+// =&gt; 1.5e-3231.3e-3221.3e-3211.3e-3201.3e-3191.3e-3181.3…
+</code></pre><button class="v-markdown-it-code-copy" style="box-sizing: border-box; border-radius: 5px; margin: 0px; font-family: inherit; font-size: inherit; line-height: inherit; overflow: visible; text-transform: none; appearance: button; position: absolute; display: flex; align-items: center; justify-content: center; top: 7.5px; right: 6px; cursor: pointer; outline: none; border: none; background: #655454; height: 25px; opacity: 0.5;" title="Sao chép" data-clipboard-text="function numberToString(n, base) {
+  var result = &quot;&quot;, sign = &quot;&quot;;
+  if (n &lt; 0) {
+    sign = &quot;-&quot;;
+    n = -n;
+  }
+  do {
+    result = String(n % base) + result;
+    n /= base;
+  } while (n &gt; 0);
+  return sign + result;
+}
+console.log(numberToString(13, 10));
+// =&gt; 1.5e-3231.3e-3221.3e-3211.3e-3201.3e-3191.3e-3181.3…
+"></button><div class="v-content-flex-center"> </div></div><p>Rõ ràng là chương trình hoạt động không đúng mong đợi. Bây giờ ta sẽ phải tìm ra đoạn gây ra lỗi và sửa nó. Chiến lược hiệu quả trong trường hợp này là ta sẽ ghi ra log kết quả sau từng đoạn con của chương trình, để xem đoạn bắt đầu gây ra lỗi.</p><div class="v-markdown-content-box" style="box-sizing: border-box; max-height: 300px; padding-bottom: 1rem; cursor: pointer; mask-image: linear-gradient(#000000 60%, transparent); color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;"><pre class="language-js" data-filename=""><code>function numberToString(n, base) {
+  var result = "", sign = "";
+  if (n &lt; 0) {
+    sign = "-";
+    n = -n;
+  }
+  console.log("sign:", sign);
+  console.log("n:", n);
+  do {
+    result = String(n % base) + result;
+    console.log("result:", result);
+    n /= base;
+    console.log("n", n);
+  } while (n &gt; 0);
+  return sign + result;
+}
+console.log(numberToString(13, 10));
+</code></pre><button class="v-markdown-it-code-copy" style="box-sizing: border-box; border-radius: 5px; margin: 0px; font-family: inherit; font-size: inherit; line-height: inherit; overflow: visible; text-transform: none; appearance: button; position: absolute; display: flex; align-items: center; justify-content: center; top: 7.5px; right: 6px; cursor: pointer; outline: none; border: none; background: #655454; height: 25px; opacity: 0.5;" title="Sao chép" data-clipboard-text="function numberToString(n, base) {
+  var result = &quot;&quot;, sign = &quot;&quot;;
+  if (n &lt; 0) {
+    sign = &quot;-&quot;;
+    n = -n;
+  }
+  console.log(&quot;sign:&quot;, sign);
+  console.log(&quot;n:&quot;, n);
+  do {
+    result = String(n % base) + result;
+    console.log(&quot;result:&quot;, result);
+    n /= base;
+    console.log(&quot;n&quot;, n);
+  } while (n &gt; 0);
+  return sign + result;
+}
+console.log(numberToString(13, 10));
+"></button><div class="v-content-flex-center"> </div></div><p>Kết quả ta có log như sau:</p><div style="box-sizing: border-box; color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;"><pre class="language-js" data-filename=""><code>sign: 
+n: 13
+result: 3
+n 1.3
+result: 1.33
+n 0.13
+result: 0.131.33
+...
+</code></pre><button class="v-markdown-it-code-copy" title="Sao chép" data-clipboard-text="sign: 
+n: 13
+result: 3
+n 1.3
+result: 1.33
+n 0.13
+result: 0.131.33
+...
+"></button></div><p>Bạn đã thấy sự bất ổn chưa? Giá trị log thứ 3 cho thấy n /= base =&gt; 1.3. Trong khi giá trị mong đợi phải là 1. À thì ra JavaScript khác với C/C++ và Java. Nếu như trong C/C++, Java, 13/10 = 1 thì trong JavaScript 13/10=1.3. Do đó, ta phải sửa thành n = Math.floor(n/base). Chương trình sẽ hoạt động đúng.</p><div class="v-markdown-content-box" style="box-sizing: border-box; max-height: 300px; padding-bottom: 1rem; cursor: pointer; mask-image: linear-gradient(#000000 60%, transparent); color: #1b1b1b; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; position: relative;"><pre class="language-js" data-filename=""><code>function numberToString(n, base) {
+  var result = "", sign = "";
+  if (n &lt; 0) {
+    sign = "-";
+    n = -n;
+  }
+  do {
+    result = String(n % base) + result;
+    n = Math.floor(n/base);
+  } while (n &gt; 0);
+  return sign + result;
+}
+console.log(numberToString(13, 10));
+// =&gt; 13
+</code></pre><button class="v-markdown-it-code-copy" style="box-sizing: border-box; border-radius: 5px; margin: 0px; font-family: inherit; font-size: inherit; line-height: inherit; overflow: visible; text-transform: none; appearance: button; position: absolute; display: flex; align-items: center; justify-content: center; top: 7.5px; right: 6px; cursor: pointer; outline: none; border: none; background: #655454; height: 25px; opacity: 0.5;" title="Sao chép" data-clipboard-text="function numberToString(n, base) {
+  var result = &quot;&quot;, sign = &quot;&quot;;
+  if (n &lt; 0) {
+    sign = &quot;-&quot;;
+    n = -n;
+  }
+  do {
+    result = String(n % base) + result;
+    n = Math.floor(n/base);
+  } while (n &gt; 0);
+  return sign + result;
+}
+console.log(numberToString(13, 10));
+// =&gt; 13
+"></button><div class="v-content-flex-center"> </div></div><p>Đó chính là một cách mà tôi thường làm khi debug JavaScript. Ngoài cách viết log, bạn cũng có thể set breakpoint giống như bạn debug trên IDE khi lập trình C/C++ hay Java. Đây cũng là một cách debug JavaScript khá hay mà tôi mới biết, nên chắc chắn sẽ thử cách này.</p><h2 id="_ket-luan-4">Kết luận</h2><p>Trên đây là một số cách giúp bạn debug JavaScript. Tôi có thể tóm tắt ngắn ngọn như sau:</p><ul><li>Sử dụng strict mode giúp giảm thiểu những lỗi không mong muốn.</li><li>Testing - unit test giúp kiểm tra từng thành phần trong chương trình.</li><li>Debugging bằng cách ghi ra log hoặc set breakpoint giúp bạn xác định chính xác vị trí lỗi và sửa nó.</li></ul><p>Hy vọng qua bài viết này bạn sẽ thấy rằng debug JavaScript không phải là một công việc quá khó khăn. Nó cũng chỉ giống như mọi ngôn ngữ lập trình khác thôi. Cuối cùng, xin chào và hẹn gặp lại ở <a href="https://completejavascript.com/mot-so-loi-khi-su-dung-strict-mode-javascript/" target="_blank" rel="noopener">bài viết tiếp theo</a> trong series <a href="https://completejavascript.com/category/javascript-co-ban/" target="_blank" rel="noopener">JavaScript cơ bản</a>. Thân ái,</p></div><footer class="post__inner post__footer"><p class="post__last-updated">This article was updated on December 31, 2024</p><div class="post__share-tag-container"><div class="post__tag"><h3>Tagged in:</h3><ul><li><a href="https://banh2510.github.io/ltm/tags/blogs/">Blogs</a></li></ul></div><div class="post__share"><button class="post__share-button js-post__share-button icon" aria-label="Share button"><i class="fas fa-share-alt"></i></button><div class="post__share-popup js-post__share-popup"></div></div></div><div class="post__bio"><div><h3><a href="https://banh2510.github.io/ltm/authors/bnh/" class="invert" rel="author">bnh</a></h3></div></div></footer></article><div><strong>You should also read:</strong></div><div class="posts"><article><header><time datetime="2024-12-31T10:46" class="date">December 31, 2024</time><h2><a href="https://banh2510.github.io/ltm/tim-hieu-ve-web-apis-trong-javascript.html">Tìm Hiểu về Web APIs trong JavaScript</a></h2></header><a href="https://banh2510.github.io/ltm/tim-hieu-ve-web-apis-trong-javascript.html" class="image fit"><img src="https://banh2510.github.io/ltm/media/posts/9/13.jpg" srcset="https://banh2510.github.io/ltm/media/posts/9/responsive/13-xs.jpg 300w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-sm.jpg 480w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-md.jpg 768w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-lg.jpg 1024w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-xl.jpg 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="526" width="1200" alt=""></a><p>Giới thiệu API Web Worker trong JavaScript Khi lập trình, dev không thể bắt người dùng phải chờ từng tác vụ này thực&hellip;</p><ul class="actions special"><li><a href="https://banh2510.github.io/ltm/tim-hieu-ve-web-apis-trong-javascript.html" class="button">Full Story</a></li></ul></article><article><header><time datetime="2024-12-31T10:45" class="date">December 31, 2024</time><h2><a href="https://banh2510.github.io/ltm/phat-trien-ung-dung-web-voi-javascript-frameworks.html">Top 10 JavaScript Framework phổ biến nhất cho phát triển web</a></h2></header><a href="https://banh2510.github.io/ltm/phat-trien-ung-dung-web-voi-javascript-frameworks.html" class="image fit"><img src="https://banh2510.github.io/ltm/media/posts/8/21.jpg" srcset="https://banh2510.github.io/ltm/media/posts/8/responsive/21-xs.jpg 300w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-sm.jpg 480w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-md.jpg 768w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-lg.jpg 1024w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-xl.jpg 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="162" width="311" alt=""></a><p>JavaScript là ngôn ngữ đa mô hình hỗ trợ các kiểu lập trình theo sự kiện, chức năng và bắt buộc (bao gồm hướng đối tượng và&hellip;</p><ul class="actions special"><li><a href="https://banh2510.github.io/ltm/phat-trien-ung-dung-web-voi-javascript-frameworks.html" class="button">Full Story</a></li></ul></article><article><header><time datetime="2024-12-31T10:45" class="date">December 31, 2024</time><h2><a href="https://banh2510.github.io/ltm/lap-trinh-huong-doi-tuong-oop-trong-javascript.html">Lập Trình Hướng Đối Tượng (OOP) trong JavaScript</a></h2></header><a href="https://banh2510.github.io/ltm/lap-trinh-huong-doi-tuong-oop-trong-javascript.html" class="image fit"><img src="https://banh2510.github.io/ltm/media/posts/7/22.png" srcset="https://banh2510.github.io/ltm/media/posts/7/responsive/22-xs.png 300w, https://banh2510.github.io/ltm/media/posts/7/responsive/22-sm.png 480w, https://banh2510.github.io/ltm/media/posts/7/responsive/22-md.png 768w, https://banh2510.github.io/ltm/media/posts/7/responsive/22-lg.png 1024w, https://banh2510.github.io/ltm/media/posts/7/responsive/22-xl.png 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="168" width="300" alt=""></a><p>Trong bài chia sẻ lần này, mình xin giới thiệu với các bạn tổng quát về khái niệm OOP trong Javascipt, cụ thể&hellip;</p><ul class="actions special"><li><a href="https://banh2510.github.io/ltm/lap-trinh-huong-doi-tuong-oop-trong-javascript.html" class="button">Full Story</a></li></ul></article></div></main><footer id="copyright"><ul><li>© Massively</li><li>Design: <a href="https://html5up.net" target="_blank" rel="nofollow noopener">HTML5 UP</a></li><li>Powered by Publii</li></ul></footer></div><script src="https://banh2510.github.io/ltm/assets/js/jquery.min.js?v=c9771cc3e90e18f5336eedbd0fffb2cf"></script><script src="https://banh2510.github.io/ltm/assets/js/jquery.scrollex.min.js?v=f89065e3d988006af9791b44561d7c90"></script><script src="https://banh2510.github.io/ltm/assets/js/jquery.scrolly.min.js?v=1ed5a78bde1476875a40f6b9ff44fc14"></script><script src="https://banh2510.github.io/ltm/assets/js/browser.min.js?v=c07298dd19048a8a69ad97e754dfe8d0"></script><script src="https://banh2510.github.io/ltm/assets/js/breakpoints.min.js?v=81a479eb099e3b187613943b085923b8"></script><script src="https://banh2510.github.io/ltm/assets/js/util.min.js?v=4201a626f8c9b614a663b3a1d7d82615"></script><script src="https://banh2510.github.io/ltm/assets/js/main.min.js?v=56233c354bd814758be8bff42f7e13a5"></script><script>/*<![CDATA[*/var images=document.querySelectorAll("img[loading]");for(var i=0;i<images.length;i++){if(images[i].complete){images[i].classList.add("is-loaded")}else{images[i].addEventListener("load",function(){this.classList.add("is-loaded")},false)}};/*]]>*/</script></body></html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>Làm Quen với JavaScript DOM Manipulation - lptriinhmng</title><meta name="description" content="JavaScript, ngôn ngữ của web, trao quyền cho các nhà phát triển tạo ra các trang web động và tương tác. Một trong&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://banh2510.github.io/ltm/lam-quen-voi-javascript-dom-manipulation.html"><link rel="alternate" type="application/atom+xml" href="https://banh2510.github.io/ltm/feed.xml"><link rel="alternate" type="application/json" href="https://banh2510.github.io/ltm/feed.json"><meta property="og:title" content="Làm Quen với JavaScript DOM Manipulation"><meta property="og:image" content="https://banh2510.github.io/ltm/media/posts/6/14.png"><meta property="og:image:width" content="310"><meta property="og:image:height" content="163"><meta property="og:site_name" content="lptriinhmng"><meta property="og:description" content="JavaScript, ngôn ngữ của web, trao quyền cho các nhà phát triển tạo ra các trang web động và tương tác. Một trong&hellip;"><meta property="og:url" content="https://banh2510.github.io/ltm/lam-quen-voi-javascript-dom-manipulation.html"><meta property="og:type" content="article"><link rel="stylesheet" href="https://banh2510.github.io/ltm/assets/css/fontawesome-all.min.css?v=85514f933f9e0b82460af63f1a403fa5"><link rel="stylesheet" href="https://banh2510.github.io/ltm/assets/css/style.css?v=a43d11e6c8e1828dd0b983b73b3cdb13"><noscript><link rel="stylesheet" href="https://banh2510.github.io/ltm/assets/css/noscript.css?v=efa867a99f5064d6729e4dc2008ad50b"></noscript><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://banh2510.github.io/ltm/lam-quen-voi-javascript-dom-manipulation.html"},"headline":"Làm Quen với JavaScript DOM Manipulation","datePublished":"2024-12-31T10:45+07:00","dateModified":"2024-12-31T21:59+07:00","image":{"@type":"ImageObject","url":"https://banh2510.github.io/ltm/media/posts/6/14.png","height":163,"width":310},"description":"JavaScript, ngôn ngữ của web, trao quyền cho các nhà phát triển tạo ra các trang web động và tương tác. Một trong&hellip;","author":{"@type":"Person","name":"bnh","url":"https://banh2510.github.io/ltm/authors/bnh/"},"publisher":{"@type":"Organization","name":"bnh","logo":{"@type":"ImageObject","url":"https://banh2510.github.io/ltm/media/website/Brown_Vintage_Retro_Cake_and_Bakery_Business_Logo__1_-removebg-preview.png","height":500,"width":500}}}</script><style>#wrapper > .bg {
+               background-image: url(https://banh2510.github.io/ltm/assets/images/overlay.png), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(https://banh2510.github.io/ltm/media/website/18.avif);
+           }</style><noscript><style>img[loading] {
+                    opacity: 1;
+                }</style></noscript></head><body class="is-preload post-template"><div id="wrapper"><header id="header"><a class="logo logo-image" href="https://banh2510.github.io/ltm/"><img src="https://banh2510.github.io/ltm/media/website/Brown_Vintage_Retro_Cake_and_Bakery_Business_Logo__1_-removebg-preview.png" alt="lptriinhmng" width="500" height="500"></a></header><nav id="nav"><ul class="links"><li><a href="https://banh2510.github.io/ltm/" target="_self">HOME</a></li><li><a href="https://banh2510.github.io/ltm/tags/blogs/" target="_self">BLOGS</a></li><li><a href="https://banh2510.github.io/ltm/profile.html" target="_self">PROFILE</a></li></ul></nav><main id="main"><article class="post"><header class="major"><time datetime="2024-12-31T10:45" class="date">December 31, 2024</time><h1>Làm Quen với JavaScript DOM Manipulation</h1><p class="post__inner"></p></header><figure class="image main"><img src="https://banh2510.github.io/ltm/media/posts/6/14.png" srcset="https://banh2510.github.io/ltm/media/posts/6/responsive/14-xs.png 300w, https://banh2510.github.io/ltm/media/posts/6/responsive/14-sm.png 480w, https://banh2510.github.io/ltm/media/posts/6/responsive/14-md.png 768w, https://banh2510.github.io/ltm/media/posts/6/responsive/14-lg.png 1024w, https://banh2510.github.io/ltm/media/posts/6/responsive/14-xl.png 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="163" width="310" alt=""></figure><div class="post__inner post__entry"><p>JavaScript, ngôn ngữ của web, trao quyền cho các nhà phát triển tạo ra các trang web động và tương tác. Một trong những tính năng chính cho phép tương tác này là thao tác Document Object Model (DOM).</p><p>Thao tác DOM cho phép các nhà phát triển tương tác và sửa đổi cấu trúc, kiểu dáng và nội dung của các trang web. Trong bài viết này, chúng ta sẽ khám phá những điều cơ bản về thao tác DOM trong JavaScript, chia nhỏ các khái niệm phức tạp thành các đoạn mã dễ hiểu.</p><h2 id="heading-what-is-the-dom">DOM là gì?</h2><p>Document Object Model (DOM) là giao diện lập trình cho các tài liệu web. Nó biểu diễn cấu trúc của một tài liệu dưới dạng cây đối tượng, trong đó mỗi đối tượng tương ứng với một phần của tài liệu, chẳng hạn như các thành phần, thuộc tính và văn bản. JavaScript có thể thao tác cấu trúc cây này, cho phép các nhà phát triển thay đổi nội dung và giao diện của trang web một cách năng động.</p><h3 id="heading-how-to-access-dom-elements">Cách truy cập các phần tử DOM</h3><p>Để thao tác DOM, chúng ta cần truy cập các phần tử của nó. Điều này thường được thực hiện bằng cách sử dụng <code>document</code>đối tượng, đại diện cho toàn bộ tài liệu HTML. Hãy xem một ví dụ đơn giản:</p><pre class="language-javascript" tabindex="0"><code>// Accessing an element by its ID
+const headerElement = document.getElementById('header');
+
+// Accessing elements by class name
+const paragraphs = document.getElementsByClassName('paragraph');
+
+// Accessing elements by tag name
+const images = document.getElementsByTagName('img');
+</code></pre><p>Trong đoạn mã trên, chúng ta sử dụng <code>getElementById</code>, <code>getElementsByClassName</code>, và <code>getElementsByTagName</code>để lấy các phần tử cụ thể. Các giá trị trả về sau đó có thể được lưu trữ trong các biến để thao tác thêm.</p><h3 id="heading-how-to-modify-element-content">Cách sửa đổi nội dung phần tử</h3><p>Khi đã có quyền truy cập vào một phần tử, chúng ta có thể sửa đổi nội dung của phần tử đó bằng <code>innerHTML</code>thuộc tính:</p><pre class="language-javascript" tabindex="0"><code>// Modifying the content of an element
+headerElement.innerHTML = 'New Header Text';
+</code></pre><p>Trong ví dụ trên, chúng tôi đã thay đổi nội dung của <code>headerElement</code>thành <code>New Header Text</code>. Đây là cách đơn giản nhưng hiệu quả để cập nhật văn bản trong một phần tử.</p><h2 id="heading-events-and-event-handling">Sự kiện và Xử lý sự kiện</h2><p>Sự kiện là các hành động hoặc sự kiện xảy ra trong trình duyệt, chẳng hạn như người dùng nhấp vào nút hoặc thay đổi kích thước cửa sổ. JavaScript cho phép chúng ta xử lý các sự kiện này và thực thi mã để phản hồi. Xử lý sự kiện là một khía cạnh quan trọng trong việc tạo các trang web tương tác.</p><h3 id="heading-how-to-add-event-listeners">Cách thêm trình lắng nghe sự kiện</h3><p>Để phản hồi các sự kiện, chúng ta có thể sử dụng trình lắng nghe sự kiện. Đây là các hàm "lắng nghe" một sự kiện cụ thể trên một phần tử cụ thể. Hãy xem xét sự kiện nhấp vào nút làm ví dụ:</p><pre class="language-javascript" tabindex="0"><code>// Accessing a button element
+const myButton = document.getElementById('myButton');
+
+// Adding a click event listener
+myButton.addEventListener('click', function() {
+    alert('Button Clicked!');
+});
+</code></pre><p>Trong ví dụ này, khi nhấp vào nút có ID <code>myButton</code>, một cảnh báo <code>Button Clicked!</code>sẽ bật lên. Trình lắng nghe sự kiện cung cấp một cách để thực thi mã tùy chỉnh dựa trên tương tác của người dùng.</p><h2 id="heading-how-to-manipulate-styles">Cách thao tác các kiểu</h2><p>Việc thao tác DOM cũng mở rộng đến việc sửa đổi kiểu của các phần tử, cho phép chúng ta tạo ra các trang web hấp dẫn và năng động.</p><h3 id="heading-how-to-change-styles-dynamically">Làm thế nào để thay đổi phong cách một cách năng động</h3><p>Chúng ta có thể sử dụng <code>style</code>thuộc tính của một phần tử để thay đổi giao diện của nó. Hãy lấy ví dụ về việc thay đổi màu của một đoạn văn khi nhấp vào một nút:</p><pre class="language-javascript" tabindex="0"><code>// Accessing a paragraph element
+const myParagraph = document.getElementById('myParagraph');
+
+// Accessing a button element
+const colorButton = document.getElementById('colorButton');
+
+// Adding a click event listener to the button
+colorButton.addEventListener('click', function() {
+    // Changing the color style of the paragraph
+    myParagraph.style.color = 'blue';
+});
+</code></pre><p>Trong ví dụ này, khi nhấp vào nút có ID <code>colorButton</code>, màu văn bản của đoạn văn có ID <code>myParagraph</code>sẽ chuyển sang màu xanh lam.</p><h2 id="heading-how-to-create-and-modify-elements">Cách tạo và sửa đổi các phần tử</h2><p>Ngoài việc sửa đổi các phần tử hiện có, JavaScript cho phép chúng ta tạo các phần tử mới và thêm chúng vào DOM.</p><h3 id="heading-how-to-create-new-elements">Làm thế nào để tạo ra các thành phần mới</h3><p>Phương pháp này <code>createElement</code>được sử dụng để tạo một phần tử HTML mới. Hãy tạo một phần tử đoạn văn mới và thêm nó vào phần thân của tài liệu:</p><pre class="language-javascript" tabindex="0"><code>// Creating a new paragraph element
+const newParagraph = document.createElement('p');
+
+// Setting the text content of the new paragraph
+newParagraph.textContent = 'This is a new paragraph.';
+
+// Appending the new paragraph to the body of the document
+document.body.appendChild(newParagraph);
+</code></pre><p>Trong ví dụ này, chúng ta tạo một <code>p</code>phần tử (đoạn văn) mới, thiết lập nội dung văn bản của phần tử đó, sau đó thêm vào phần thân của tài liệu.</p><h3 id="heading-how-to-modify-attributes">Cách sửa đổi thuộc tính</h3><p>Chúng ta cũng có thể sửa đổi các thuộc tính của các phần tử hiện có. Hãy xem xét việc thay đổi nguồn của hình ảnh một cách động:</p><pre class="language-javascript" tabindex="0"><code>// Accessing an image element
+const myImage = document.getElementById('myImage');
+
+// Changing the source attribute of the image
+myImage.src = 'new-image.jpg';
+</code></pre><p>Tại đây, chúng ta truy cập vào phần tử hình ảnh có ID <code>myImage</code>và thay đổi <code>src</code>thuộc tính của nó thành <code>new-image.jpg</code>, cập nhật hình ảnh được hiển thị một cách động.</p><h3 id="heading-how-to-update-form-input-values">Cách cập nhật giá trị đầu vào biểu mẫu</h3><p>Hãy xem xét một tình huống trong đó bạn muốn cập nhật giá trị của văn bản đầu vào dựa trên tương tác của người dùng:</p><pre class="language-javascript" tabindex="0"><code>// Accessing a text input element
+const myInput = document.getElementById('myInput');
+
+// Adding an input event listener
+myInput.addEventListener('input', function() {
+    // Updating a paragraph with the input value
+    document.getElementById('inputValue').textContent = myInput.value;
+});
+</code></pre><p>Trong ví dụ này, khi người dùng nhập văn bản có ID <code>myInput</code>, đoạn văn có ID đó <code>inputValue</code>sẽ được cập nhật động để phản ánh giá trị đầu vào.</p><h3 id="heading-how-to-toggle-visibility">Làm thế nào để chuyển đổi chế độ hiển thị</h3><p>Bạn có thể chuyển đổi chế độ hiển thị của một phần tử bằng cách sử dụng <code>display</code>thuộc tính style. Hãy tạo một nút chuyển đổi chế độ hiển thị của một đoạn văn:</p><pre class="language-javascript" tabindex="0"><code>// Accessing a button element
+const toggleButton = document.getElementById('toggleButton');
+
+// Accessing a paragraph element
+const toggleParagraph = document.getElementById('toggleParagraph');
+
+// Adding a click event listener
+toggleButton.addEventListener('click', function() {
+    // Toggling the visibility of the paragraph
+    toggleParagraph.style.display = toggleParagraph.style.display === 'none' ? 'block' : 'none';
+});
+</code></pre><p>Ở đây, đoạn văn có ID <code>toggleParagraph</code>ban đầu sẽ hiển thị. Nhấp vào nút có ID <code>toggleButton</code>để chuyển đổi chế độ hiển thị của nó.</p><h2 id="heading-common-pitfalls-in-dom-manipulation">Những cạm bẫy thường gặp trong thao tác DOM</h2><p>Trong khi thao tác DOM là một công cụ mạnh mẽ để tạo các trang web động, người mới bắt đầu thường gặp phải những cạm bẫy phổ biến có thể dẫn đến hành vi hoặc lỗi không mong muốn. Hãy cùng khám phá một số cạm bẫy này và cung cấp các mẹo về cách tránh chúng.</p><h3 id="heading-manipulating-the-dom-before-its-ready">Thao tác DOM trước khi nó sẵn sàng</h3><p>Đôi khi chúng ta có thể cố gắng thao tác DOM trước khi nó được tải đầy đủ. Điều này có thể dẫn đến JavaScript cố gắng truy cập các phần tử chưa được hiển thị. Để tránh điều này, điều quan trọng là phải đợi DOM được tải đầy đủ trước khi thực thi bất kỳ mã JavaScript nào:</p><pre class="language-javascript" tabindex="0"><code>document.addEventListener('DOMContentLoaded', function() {
+    // DOM manipulation code goes here
+});
+</code></pre><p>Bằng cách gói mã thao tác DOM bên trong <code>DOMContentLoaded</code>trình lắng nghe sự kiện, bạn đảm bảo rằng mã này chỉ chạy khi DOM đã sẵn sàng.</p><h3 id="heading-not-checking-if-an-element-exists">Không kiểm tra xem một phần tử có tồn tại hay không</h3><p>Khi cố gắng truy cập một phần tử bằng các phương thức như <code>getElementById</code>, chúng ta có thể cho rằng phần tử đó tồn tại và tiến hành thao tác. Tuy nhiên, nếu phần tử không có trên trang, có thể dẫn đến lỗi.</p><p>Luôn kiểm tra xem một phần tử có tồn tại hay không trước khi thao tác với nó:</p><pre class="language-javascript" tabindex="0"><code>const myElement = document.getElementById('myElement');
+
+if (myElement) {
+    // Manipulate the element here
+} else {
+    console.error('Element not found!');
+}
+</code></pre><p>Kiểm tra đơn giản này giúp ngăn ngừa lỗi khi làm việc với các thành phần có thể có hoặc không có.</p><h3 id="heading-forgetting-to-prevent-default-actions">Quên ngăn chặn các hành động mặc định</h3><p>Khi xử lý sự kiện, việc quên ngăn chặn hành động mặc định có thể dẫn đến hành vi trang không mong muốn. Ví dụ, nếu một biểu mẫu được gửi mà không ngăn chặn hành động mặc định, trang có thể tải lại, gây mất dữ liệu:</p><pre class="language-javascript" tabindex="0"><code>const myForm = document.getElementById('myForm');
+
+myForm.addEventListener('submit', function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Your form handling code goes here
+});
+</code></pre><p>Bằng cách gọi <code>event.preventDefault()</code>, bạn dừng hành vi mặc định liên quan đến sự kiện, giúp bạn kiểm soát hoàn toàn cách xử lý sự kiện.</p><h3 id="heading-performing-inefficient-dom-queries">Thực hiện các truy vấn DOM không hiệu quả</h3><p>Thực hiện các truy vấn DOM không hiệu quả, đặc biệt là trong các vòng lặp, có thể làm giảm hiệu suất. Mỗi truy vấn liên quan đến việc duyệt DOM và các truy vấn không cần thiết có thể làm chậm trang web của bạn.</p><p>Thay vì truy vấn DOM nhiều lần, hãy lưu trữ các tham chiếu đến các phần tử:</p><pre class="language-javascript" tabindex="0"><code>// Inefficient query within a loop
+for (let i = 0; i &lt; 10; i++) {
+    const myElement = document.getElementById('myElement');
+    // Manipulate myElement
+}
+
+// Efficient query outside the loop
+const myElement = document.getElementById('myElement');
+for (let i = 0; i &lt; 10; i++) {
+    // Manipulate myElement
+}
+</code></pre><p>Bằng cách truy vấn DOM một lần và sử dụng lại tham chiếu, bạn sẽ tối ưu hóa mã của mình.</p><h3 id="heading-not-handling-cross-browser-compatibility">Không xử lý khả năng tương thích giữa các trình duyệt</h3><p>Các trình duyệt khác nhau có thể diễn giải JavaScript và thao tác DOM hơi khác nhau. Không tính đến khả năng tương thích giữa các trình duyệt có thể dẫn đến hành vi không nhất quán.</p><p>Sử dụng tính năng phát hiện và cân nhắc sử dụng các thư viện như jQuery hoặc các khuôn khổ hiện đại để xử lý sự không nhất quán giữa các trình duyệt:</p><pre class="language-javascript" tabindex="0"><code>// Feature detection for addEventListener
+if (document.addEventListener) {
+    // Use addEventListener
+} else {
+    // Fall back to alternative method
+}
+</code></pre><p>Bằng cách kiểm tra các tính năng trước khi sử dụng, bạn có thể đảm bảo mã của mình hoạt động trên nhiều trình duyệt khác nhau.</p><h2 id="heading-how-to-use-frameworks-for-dom-manipulation">Cách sử dụng các khung để thao tác DOM</h2><p>Trong khi JavaScript cho phép thao tác DOM trực tiếp, phát triển web hiện đại thường liên quan đến việc sử dụng các khuôn khổ như React hoặc Vue.js. Các khuôn khổ này cung cấp một cách có cấu trúc hơn để xây dựng và quản lý giao diện người dùng.</p><h3 id="heading-react-example">Ví dụ về phản ứng</h3><pre class="language-javascript" tabindex="0"><code>// React component rendering a button and handling its click event
+class MyButton extends React.Component {
+    handleClick() {
+        alert('React Button Clicked!');
+    }
+
+    render() {
+        return (
+            &lt;button onClick={() =&gt; this.handleClick()}&gt;Click me&lt;/button&gt;
+        );
+    }
+}
+
+// Rendering the React component to the DOM
+ReactDOM.render(&lt;MyButton /&gt;, document.getElementById('reactRoot'));
+</code></pre><p>Trong ví dụ React này, một thành phần được tạo ra để xử lý sự kiện nhấp vào nút, thể hiện cách tiếp cận mang tính khai báo hơn đối với quá trình phát triển UI.</p><h3 id="heading-vuejs-example">Ví dụ về Vue.js</h3><pre class="language-javascript" tabindex="0"><code>// Vue.js instance with a data property and a method
+new Vue({
+    el: '#vueRoot',
+    data: {
+        message: 'Vue.js Message'
+    },
+    methods: {
+        showMessage: function () {
+            alert(this.message);
+        }
+    }
+});
+</code></pre><p>Tại đây, một phiên bản Vue.js được tạo ra để quản lý dữ liệu và phương thức, thể hiện khả năng phản ứng và cấu trúc dựa trên thành phần của Vue.js.</p><h2 id="heading-conclusion">Phần kết luận</h2><p>Trong hướng dẫn toàn diện này, chúng tôi đã đi sâu vào thế giới thao tác DOM trong JavaScript. Từ việc truy cập các phần tử đến xử lý sự kiện và từ việc sửa đổi kiểu đến việc tạo các phần tử mới, chúng tôi đã đề cập đến các khái niệm thiết yếu theo cách đơn giản.</p><p>Hãy nhớ rằng, thao tác DOM là cốt lõi của việc tạo ra các trang web động và tương tác. Bằng cách nắm vững các kỹ thuật cơ bản này, bạn sẽ được trang bị tốt để xây dựng các ứng dụng web hấp dẫn và thân thiện với người dùng. Khi bạn tiếp tục hành trình với JavaScript, việc thực hành và thử nghiệm sẽ giúp bạn hiểu sâu hơn về các khái niệm này, mở đường cho sự thành công của bạn với tư cách là một nhà phát triển web.</p></div><footer class="post__inner post__footer"><p class="post__last-updated">This article was updated on December 31, 2024</p><div class="post__share-tag-container"><div class="post__tag"><h3>Tagged in:</h3><ul><li><a href="https://banh2510.github.io/ltm/tags/blogs/">Blogs</a></li></ul></div><div class="post__share"><button class="post__share-button js-post__share-button icon" aria-label="Share button"><i class="fas fa-share-alt"></i></button><div class="post__share-popup js-post__share-popup"></div></div></div><div class="post__bio"><div><h3><a href="https://banh2510.github.io/ltm/authors/bnh/" class="invert" rel="author">bnh</a></h3></div></div></footer></article><div><strong>You should also read:</strong></div><div class="posts"><article><header><time datetime="2024-12-31T10:46" class="date">December 31, 2024</time><h2><a href="https://banh2510.github.io/ltm/cong-cu-debugging-va-testing-trong-javascript.html">DEBUG JAVASCRIPT – DỄ HAY KHÓ?</a></h2></header><a href="https://banh2510.github.io/ltm/cong-cu-debugging-va-testing-trong-javascript.html" class="image fit"><img src="https://banh2510.github.io/ltm/media/posts/10/20.png" srcset="https://banh2510.github.io/ltm/media/posts/10/responsive/20-xs.png 300w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-sm.png 480w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-md.png 768w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-lg.png 1024w, https://banh2510.github.io/ltm/media/posts/10/responsive/20-xl.png 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="170" width="297" alt=""></a><p>Với mọi ngôn ngữ lập trình, debug là một hoạt động khó và mất nhiều thời gian nhất. Trong đó, debug JavaScript là khó khăn&hellip;</p><ul class="actions special"><li><a href="https://banh2510.github.io/ltm/cong-cu-debugging-va-testing-trong-javascript.html" class="button">Full Story</a></li></ul></article><article><header><time datetime="2024-12-31T10:46" class="date">December 31, 2024</time><h2><a href="https://banh2510.github.io/ltm/tim-hieu-ve-web-apis-trong-javascript.html">Tìm Hiểu về Web APIs trong JavaScript</a></h2></header><a href="https://banh2510.github.io/ltm/tim-hieu-ve-web-apis-trong-javascript.html" class="image fit"><img src="https://banh2510.github.io/ltm/media/posts/9/13.jpg" srcset="https://banh2510.github.io/ltm/media/posts/9/responsive/13-xs.jpg 300w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-sm.jpg 480w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-md.jpg 768w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-lg.jpg 1024w, https://banh2510.github.io/ltm/media/posts/9/responsive/13-xl.jpg 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="526" width="1200" alt=""></a><p>Giới thiệu API Web Worker trong JavaScript Khi lập trình, dev không thể bắt người dùng phải chờ từng tác vụ này thực&hellip;</p><ul class="actions special"><li><a href="https://banh2510.github.io/ltm/tim-hieu-ve-web-apis-trong-javascript.html" class="button">Full Story</a></li></ul></article><article><header><time datetime="2024-12-31T10:45" class="date">December 31, 2024</time><h2><a href="https://banh2510.github.io/ltm/phat-trien-ung-dung-web-voi-javascript-frameworks.html">Top 10 JavaScript Framework phổ biến nhất cho phát triển web</a></h2></header><a href="https://banh2510.github.io/ltm/phat-trien-ung-dung-web-voi-javascript-frameworks.html" class="image fit"><img src="https://banh2510.github.io/ltm/media/posts/8/21.jpg" srcset="https://banh2510.github.io/ltm/media/posts/8/responsive/21-xs.jpg 300w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-sm.jpg 480w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-md.jpg 768w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-lg.jpg 1024w, https://banh2510.github.io/ltm/media/posts/8/responsive/21-xl.jpg 1360w" sizes="(max-width: 1360px) 100vw, 1360px" loading="lazy" height="162" width="311" alt=""></a><p>JavaScript là ngôn ngữ đa mô hình hỗ trợ các kiểu lập trình theo sự kiện, chức năng và bắt buộc (bao gồm hướng đối tượng và&hellip;</p><ul class="actions special"><li><a href="https://banh2510.github.io/ltm/phat-trien-ung-dung-web-voi-javascript-frameworks.html" class="button">Full Story</a></li></ul></article></div></main><footer id="copyright"><ul><li>© Massively</li><li>Design: <a href="https://html5up.net" target="_blank" rel="nofollow noopener">HTML5 UP</a></li><li>Powered by Publii</li></ul></footer></div><script src="https://banh2510.github.io/ltm/assets/js/jquery.min.js?v=c9771cc3e90e18f5336eedbd0fffb2cf"></script><script src="https://banh2510.github.io/ltm/assets/js/jquery.scrollex.min.js?v=f89065e3d988006af9791b44561d7c90"></script><script src="https://banh2510.github.io/ltm/assets/js/jquery.scrolly.min.js?v=1ed5a78bde1476875a40f6b9ff44fc14"></script><script src="https://banh2510.github.io/ltm/assets/js/browser.min.js?v=c07298dd19048a8a69ad97e754dfe8d0"></script><script src="https://banh2510.github.io/ltm/assets/js/breakpoints.min.js?v=81a479eb099e3b187613943b085923b8"></script><script src="https://banh2510.github.io/ltm/assets/js/util.min.js?v=4201a626f8c9b614a663b3a1d7d82615"></script><script src="https://banh2510.github.io/ltm/assets/js/main.min.js?v=56233c354bd814758be8bff42f7e13a5"></script><script>/*<![CDATA[*/var images=document.querySelectorAll("img[loading]");for(var i=0;i<images.length;i++){if(images[i].complete){images[i].classList.add("is-loaded")}else{images[i].addEventListener("load",function(){this.classList.add("is-loaded")},false)}};/*]]>*/</script></body></html>
